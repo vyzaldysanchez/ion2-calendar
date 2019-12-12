@@ -71,6 +71,7 @@ export interface CalendarModalOptions extends CalendarOptions {
    */
   showYearPicker?: boolean;
   defaultEndDateToStartDate?: boolean;
+  select: (day: CalendarDay) => void,
 }
 
 export interface CalendarOptions {

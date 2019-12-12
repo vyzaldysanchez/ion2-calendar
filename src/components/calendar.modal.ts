@@ -63,6 +63,7 @@ const NUM_OF_MONTHS_TO_CREATE = 3;
                                 [id]="_d.id"
                                 [color]="_d.color"
                                 (change)="onChange($event)"
+                                (select)="select($event)"
                                 [(ngModel)]="datesTemp">
             </ion-calendar-month>
           </div>
@@ -88,6 +89,8 @@ export class CalendarModal implements OnInit, AfterViewInit {
 
   @Input()
   options: CalendarModalOptions;
+  @Input()
+  select: () => CalendarDay;
 
   datesTemp: Array<CalendarDay> = [null, null];
   calendarMonths: Array<CalendarMonth>;
